@@ -1,44 +1,51 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using RealUniversity.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using RealUniversity.Data;
-using RealUniversity.Models;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Threading.Tasks;
 
 namespace RealUniversity.Pages.Students
 {
     public class DeleteModel : PageModel
     {
         private readonly RealUniversity.Data.SchoolContext _context;
+        private readonly ILogger<DeleteModel> _logger;
 
-        public DeleteModel(RealUniversity.Data.SchoolContext context)
+        public DeleteModel(RealUniversity.Data.SchoolContext context,
+                           ILogger<DeleteModel> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         [BindProperty]
-        public Student Student { get; set; } = default!;
+        public Student Student { get; set; }
+        public string ErrorMessage { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(int? id, bool? saveChangesError = false)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var student = await _context.Student.FirstOrDefaultAsync(m => m.ID == id);
+            Student = await _context.Students
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m => m.ID == id);
 
-            if (student is not null)
+            if (Student == null)
             {
-                Student = student;
-
-                return Page();
+                return NotFound();
             }
 
-            return NotFound();
+            if (saveChangesError.GetValueOrDefault())
+            {
+                ErrorMessage = String.Format("Delete {ID} failed. Try again", id);
+            }
+
+            return Page();
         }
 
         public async Task<IActionResult> OnPostAsync(int? id)
@@ -48,15 +55,26 @@ namespace RealUniversity.Pages.Students
                 return NotFound();
             }
 
-            var student = await _context.Student.FindAsync(id);
-            if (student != null)
+            var student = await _context.Students.FindAsync(id);
+
+            if (student == null)
             {
-                Student = student;
-                _context.Student.Remove(Student);
-                await _context.SaveChangesAsync();
+                return NotFound();
             }
 
-            return RedirectToPage("./Index");
+            try
+            {
+                _context.Students.Remove(student);
+                await _context.SaveChangesAsync();
+                return RedirectToPage("./Index");
+            }
+            catch (DbUpdateException ex)
+            {
+                _logger.LogError(ex, ErrorMessage);
+
+                return RedirectToAction("./Delete",
+                                     new { id, saveChangesError = true });
+            }
         }
     }
 }
