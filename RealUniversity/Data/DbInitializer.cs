@@ -19,6 +19,7 @@ namespace RealUniversity.Data
             {
                 FirstMidName = "Carson",
                 LastName = "Alexander",
+                Age = 18,
                 EnrollmentDate = DateTime.Parse("2016-09-01")
             };
 
@@ -26,6 +27,7 @@ namespace RealUniversity.Data
             {
                 FirstMidName = "Meredith",
                 LastName = "Alonso",
+                Age = 19,
                 EnrollmentDate = DateTime.Parse("2018-09-01")
             };
 
@@ -33,6 +35,7 @@ namespace RealUniversity.Data
             {
                 FirstMidName = "Arturo",
                 LastName = "Anand",
+                Age = 22,
                 EnrollmentDate = DateTime.Parse("2019-09-01")
             };
 
@@ -40,6 +43,7 @@ namespace RealUniversity.Data
             {
                 FirstMidName = "Gytis",
                 LastName = "Barzdukas",
+                Age = 18,
                 EnrollmentDate = DateTime.Parse("2018-09-01")
             };
 
@@ -47,6 +51,7 @@ namespace RealUniversity.Data
             {
                 FirstMidName = "Yan",
                 LastName = "Li",
+                Age = 30,
                 EnrollmentDate = DateTime.Parse("2018-09-01")
             };
 
@@ -54,6 +59,7 @@ namespace RealUniversity.Data
             {
                 FirstMidName = "Peggy",
                 LastName = "Justice",
+                Age = 21,
                 EnrollmentDate = DateTime.Parse("2017-09-01")
             };
 
@@ -61,6 +67,7 @@ namespace RealUniversity.Data
             {
                 FirstMidName = "Laura",
                 LastName = "Norman",
+                Age = 23,
                 EnrollmentDate = DateTime.Parse("2019-09-01")
             };
 
@@ -68,6 +75,7 @@ namespace RealUniversity.Data
             {
                 FirstMidName = "Nino",
                 LastName = "Olivetto",
+                Age = 20,
                 EnrollmentDate = DateTime.Parse("2011-09-01")
             };
 

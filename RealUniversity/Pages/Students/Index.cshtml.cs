@@ -58,17 +58,17 @@ namespace RealUniversity.Pages.Students
                 case "name_desc":
                     studentsIQ = studentsIQ.OrderByDescending(s => s.LastName);
                     break;
-                case "Date":
-                    studentsIQ = studentsIQ.OrderBy(s => s.EnrollmentDate);
-                    break;
-                case "date_desc":
-                    studentsIQ = studentsIQ.OrderByDescending(s => s.EnrollmentDate);
-                    break;
                 case "Age":
                     studentsIQ = studentsIQ.OrderByDescending(s => s.Age);
                     break;
                 case "age_desc":
                     studentsIQ = studentsIQ.OrderBy(s => s.Age);
+                    break;
+                case "Date":
+                    studentsIQ = studentsIQ.OrderBy(s => s.EnrollmentDate);
+                    break;
+                case "date_desc":
+                    studentsIQ = studentsIQ.OrderByDescending(s => s.EnrollmentDate);
                     break;
                 default:
                     studentsIQ = studentsIQ.OrderBy(s => s.LastName);
