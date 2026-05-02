@@ -6502,11 +6502,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Thatg\\OneDrive\\Desktop\\csci340lab9\\RealUniversity\\RealUniversity.csproj",
+      "projectUniqueName": "C:\\Users\\Thatg\\OneDrive\\Desktop\\csci340lab9\\RealUniversity\\RealUniversity.csproj",
       "projectName": "RealUniversity",
-      "projectPath": "c:\\Users\\Thatg\\OneDrive\\Desktop\\csci340lab9\\RealUniversity\\RealUniversity.csproj",
+      "projectPath": "C:\\Users\\Thatg\\OneDrive\\Desktop\\csci340lab9\\RealUniversity\\RealUniversity.csproj",
       "packagesPath": "C:\\Users\\Thatg\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Thatg\\OneDrive\\Desktop\\csci340lab9\\RealUniversity\\obj\\",
+      "outputPath": "C:\\Users\\Thatg\\OneDrive\\Desktop\\csci340lab9\\RealUniversity\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Thatg\\AppData\\Roaming\\NuGet\\NuGet.Config"
