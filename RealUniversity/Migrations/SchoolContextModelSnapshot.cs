@@ -154,17 +154,16 @@ namespace RealUniversity.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("Age")
-                        .HasColumnType("INTEGER");
+                        .HasMaxLength(50)
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("FirstName");
 
                     b.Property<DateTime>("EnrollmentDate")
                         .HasMaxLength(3)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("FirstMidName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("TEXT")
-                        .HasColumnName("FirstName");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("LastName")
                         .IsRequired()

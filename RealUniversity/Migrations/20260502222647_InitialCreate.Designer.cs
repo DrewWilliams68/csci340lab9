@@ -11,8 +11,8 @@ using RealUniversity.Data;
 namespace RealUniversity.Migrations
 {
     [DbContext(typeof(SchoolContext))]
-    [Migration("20260501032424_RowVersion")]
-    partial class RowVersion
+    [Migration("20260502222647_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -156,14 +156,17 @@ namespace RealUniversity.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("Age")
+                        .HasMaxLength(50)
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("FirstName");
+
                     b.Property<DateTime>("EnrollmentDate")
+                        .HasMaxLength(3)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("FirstMidName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("TEXT")
-                        .HasColumnName("FirstName");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("LastName")
                         .IsRequired()

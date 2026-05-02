@@ -15,19 +15,18 @@ namespace RealUniversity.Models
         [StringLength(50, ErrorMessage = "First name cannot be longer than 50 characters.")]
         [Column("FirstName")]
         [Display(Name = "First Name")]
-        public string FirstMidName { get; set; }
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        [Display(Name = "Enrollment Date")]
-        
         public int Age {get; set;}
         [Required]
         [StringLength(3, ErrorMessage = "Age cannot be longer that 3 numbers")]
         [Display(Name = "Age")]
-        
         public DateTime EnrollmentDate { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Enrollment Date")]
+        
+        public string FirstMidName { get; set; }
         [Display(Name = "Full Name")]
-
+        
         public string FullName
         {
             get

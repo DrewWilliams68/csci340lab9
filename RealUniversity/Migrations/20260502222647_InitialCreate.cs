@@ -33,8 +33,9 @@ namespace RealUniversity.Migrations
                     ID = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     LastName = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
-                    FirstName = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
-                    EnrollmentDate = table.Column<DateTime>(type: "TEXT", nullable: false)
+                    FirstName = table.Column<int>(type: "INTEGER", maxLength: 50, nullable: false),
+                    EnrollmentDate = table.Column<DateTime>(type: "TEXT", maxLength: 3, nullable: false),
+                    FirstMidName = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -50,7 +51,8 @@ namespace RealUniversity.Migrations
                     Name = table.Column<string>(type: "TEXT", maxLength: 50, nullable: true),
                     Budget = table.Column<decimal>(type: "money", nullable: false),
                     StartDate = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    InstructorID = table.Column<int>(type: "INTEGER", nullable: true)
+                    InstructorID = table.Column<int>(type: "INTEGER", nullable: true),
+                    ConcurrencyToken = table.Column<Guid>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
