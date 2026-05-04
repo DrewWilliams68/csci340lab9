@@ -33,9 +33,9 @@ namespace RealUniversity.Migrations
                     ID = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     LastName = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
-                    FirstName = table.Column<string>(type: "INTEGER", maxLength: 50, nullable: false),
-                    Age = table.Column<int>(type: "TEXT", maxLength: 3, nullable: false),
-                    EnrollmentDate = table.Column<DateTime>(type: "TEXT", maxLength: 12, nullable: false)
+                    Age = table.Column<int>(type: "INTEGER", maxLength: 3, nullable: false),
+                    EnrollmentDate = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    FirstName = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {

@@ -311,12 +311,12 @@ namespace RealUniversity.Data
                 new Enrollment {
                     Student = anand,
                     Course = microeconomics,
-                    Grade = Grade.B
+                    Grade = Grade.W
                 },
                 new Enrollment {
                     Student = barzdukas,
                     Course = chemistry,
-                    Grade = Grade.B
+                    Grade = Grade.I
                 },
                 new Enrollment {
                     Student = li,
@@ -326,7 +326,7 @@ namespace RealUniversity.Data
                 new Enrollment {
                     Student = justice,
                     Course = literature,
-                    Grade = Grade.B
+                    Grade = Grade.W
                 }
             };
 

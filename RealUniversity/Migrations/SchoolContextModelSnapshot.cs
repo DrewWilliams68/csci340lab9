@@ -153,26 +153,22 @@ namespace RealUniversity.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    
-                    b.Property<string>("FirstName")
+                    b.Property<int>("Age")
+                        .HasMaxLength(3)
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("EnrollmentDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("FirstMidName")
                         .IsRequired()
+                        .HasMaxLength(50)
                         .HasColumnType("TEXT")
-                        .HasMaxLength(50);
+                        .HasColumnName("FirstName");
 
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("Age")
-                        .IsRequired()
-                        .HasMaxLength(3)
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("AGE");
-
-                    b.Property<DateTime>("EnrollmentDate")
-                        .IsRequired()
-                        .HasMaxLength(12)
                         .HasColumnType("TEXT");
 
                     b.HasKey("ID");
